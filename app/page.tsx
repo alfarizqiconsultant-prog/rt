@@ -35,7 +35,7 @@ export default function Home() {
         <div className="section-heading"><div><p className="eyebrow">DI DALAM PORTAL</p><h2>Lebih dekat, lebih mudah.</h2></div><span className="section-index">01 — 03</span></div>
         <div className="service-grid">{sections.map(([number,title,description]) => <article className="service-card" key={number}><span className="service-number">{number}</span><div><h3>{title}</h3><p>{description}</p></div><span className="coming-soon">SEGERA HADIR</span></article>)}</div>
       </section>
-      <footer className="footer"><a className="footer-brand" href="#">RT ARJUNA GSP</a><span>Portal informasi dan layanan warga.</span><span>© {new Date().getFullYear()} RT Arjuna GSP</span></footer>
+      <footer className="footer"><a className="footer-brand" href="#">RT ARJUNA GSP</a><span>Portal informasi dan layanan warga.</span><span>© 2026 RT Arjuna GSP</span></footer>
     </main>
   );
 }
