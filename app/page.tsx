@@ -69,7 +69,7 @@ export default function Home() {
         <p className="gallery-note">Foto di atas merupakan gambar ilustrasi. Dokumentasi kegiatan RT Arjuna GSP dapat ditambahkan oleh pengurus.</p>
       </section>
 
-      <section className="contact-section" id="kontak"><div><p className="eyebrow">PUNYA IDE ATAU PERTANYAAN?</p><h2>Mari jaga lingkungan ini <em>bersama.</em></h2><p>Hubungi pengurus RT untuk menyampaikan informasi, pertanyaan, atau usulan kegiatan warga.</p></div><a className="contact-button" href="mailto:">Hubungi pengurus RT <span>↗</span></a></section>
+      <section className="contact-section" id="kontak"><div><p className="eyebrow">PUNYA IDE ATAU PERTANYAAN?</p><h2>Mari jaga lingkungan ini <em>bersama.</em></h2><p>Hubungi pengurus RT untuk menyampaikan informasi, pertanyaan, atau usulan kegiatan warga.</p></div><span className="contact-button">Kontak pengurus akan ditambahkan <span>↗</span></span></section>
       <footer className="footer"><a className="footer-brand" href="#beranda">RT ARJUNA GSP</a><span>Portal informasi dan ruang kebersamaan warga.</span><a href="#beranda">Kembali ke atas ↑</a><span>© 2026 RT Arjuna GSP</span></footer>
     </main>
   );
