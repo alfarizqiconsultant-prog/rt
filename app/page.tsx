@@ -1,69 +1,41 @@
-import Image from "next/image";
+const sections = [
+  ["01", "Informasi warga", "Pengumuman dan informasi penting lingkungan dalam satu tempat."],
+  ["02", "Layanan administrasi", "Informasi layanan dan kebutuhan administrasi RT."],
+  ["03", "Kegiatan lingkungan", "Agenda, kegiatan, dan kabar terbaru RT Arjuna GSP."],
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="site-shell">
+      <header className="topbar">
+        <a className="brand" href="#"><span className="brand-mark">A</span><span><strong>RT ARJUNA GSP</strong><small>PORTAL WARGA</small></span></a>
+        <a className="top-link" href="#tentang">Tentang portal ↗</a>
+      </header>
+      <section className="hero">
+        <div className="hero-copy">
+          <p className="eyebrow"><span className="live-dot" /> PORTAL RESMI WARGA</p>
+          <h1>Ruang bersama untuk warga <em>Arjuna GSP.</em></h1>
+          <p className="hero-description">Selamat datang di portal RT Arjuna GSP. Satu tempat untuk mendapatkan informasi lingkungan, mengenal kegiatan warga, dan mengakses layanan RT.</p>
+          <a className="primary-link" href="#layanan">Jelajahi portal <span>→</span></a>
+          <p className="hero-note">Dibangun untuk lingkungan yang lebih terhubung.</p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="hero-art" role="img" aria-label="Ilustrasi lingkungan tempat tinggal">
+          <div className="sun" /><div className="art-label">BERSAMA<br/>MEMBANGUN<br/><b>LINGKUNGAN</b></div>
+          <div className="building building-back"><i/><i/><i/><i/></div>
+          <div className="building building-front"><i/><i/><i/><i/><i/><i/></div>
+          <div className="tree tree-one"><i/></div><div className="tree tree-two"><i/></div>
+          <div className="ground"/><div className="art-caption">RT ARJUNA GSP <span>•</span> INDONESIA</div>
         </div>
-      </main>
-    </div>
+      </section>
+      <section className="intro" id="tentang">
+        <div><p className="eyebrow">SELAMAT DATANG</p><h2>Lingkungan yang baik<br/>dimulai dari <em>kebersamaan.</em></h2></div>
+        <p className="intro-copy">Portal ini menjadi fondasi digital RT Arjuna GSP. Informasi dan fitur layanan akan dikembangkan bertahap sesuai kebutuhan warga.</p>
+      </section>
+      <section className="services" id="layanan">
+        <div className="section-heading"><div><p className="eyebrow">DI DALAM PORTAL</p><h2>Lebih dekat, lebih mudah.</h2></div><span className="section-index">01 — 03</span></div>
+        <div className="service-grid">{sections.map(([number,title,description]) => <article className="service-card" key={number}><span className="service-number">{number}</span><div><h3>{title}</h3><p>{description}</p></div><span className="coming-soon">SEGERA HADIR</span></article>)}</div>
+      </section>
+      <footer className="footer"><a className="footer-brand" href="#">RT ARJUNA GSP</a><span>Portal informasi dan layanan warga.</span><span>© {new Date().getFullYear()} RT Arjuna GSP</span></footer>
+    </main>
   );
 }
